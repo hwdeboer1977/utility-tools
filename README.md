@@ -24,6 +24,13 @@ Designed for testing conversational flows without relying on real WhatsApp integ
 
 ---
 
+### 4. WhatsApp Bot (Twilio) (`whatsapp-bot-twilio`)
+A real WhatsApp bot connected to Twilio's WhatsApp Sandbox.
+It uses Node.js, Express, Twilio webhooks, and ngrok tunneling to receive and reply to real WhatsApp messages.
+This folder contains the bot logic, webhook server, `.env` setup, and Twilio configuration instructions.
+
+---
+
 ## 📁 Structure
 
 ```
@@ -31,7 +38,8 @@ utility-tools/
 │
 ├── ai-onboarding/
 ├── webapp-mobile-pwa/
-└── whatsapp-bot-simulator/
+├── whatsapp-bot-simulator/
+└── whatsapp-bot-twilio/
 ```
 
 Each folder contains:
@@ -47,5 +55,23 @@ This repository acts as a central hub for small experiments, prototypes, and uti
 - onboarding flows  
 - PWA testing  
 - conversational UI experiments  
+- WhatsApp bot development  
 
 These tools are intended for learning, rapid prototyping, and internal use.
+
+---
+
+## 🧹 Git Cleanup (Node Projects)
+
+For any Node.js tool in this repository, remember:
+
+- Add a `.gitignore` that excludes `node_modules/` and `.env`
+- If node_modules was already committed, reset Git cache:
+
+```
+git rm -r --cached .
+git add .
+git commit -m "Clean repo and apply .gitignore"
+```
+
+This keeps the repository clean and prevents large unnecessary commits.
